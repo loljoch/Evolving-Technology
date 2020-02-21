@@ -14,8 +14,8 @@ TagManager:
   - 
   - 
   - ObjectLayer
-  - 
-  - 
+  - ObstacleLayer
+  - Snow
   - 
   - 
   - 

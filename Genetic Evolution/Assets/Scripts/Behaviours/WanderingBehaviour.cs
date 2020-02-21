@@ -15,6 +15,7 @@ public class WanderingBehaviour : StateMachineBehaviour
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        animator.GetComponent<FieldOfView>().enabled = true;
         timer = wanderTimer;
     }
 
@@ -28,7 +29,7 @@ public class WanderingBehaviour : StateMachineBehaviour
             Vector3 newPos = SetRandomPosition(animator.transform.position, wanderRadius, -1);
             animator.GetComponent<NavMeshAgent>().SetDestination(newPos);
             timer = 0;
-        } else if (animator.GetComponent<NavMeshAgent>().remainingDistance < 0.4f)
+        } else if (animator.GetComponent<NavMeshAgent>().remainingDistance < 1.1f)
         {
             Vector3 newPos = SetRandomPosition(animator.transform.position, wanderRadius, -1);
             animator.GetComponent<NavMeshAgent>().SetDestination(newPos);
